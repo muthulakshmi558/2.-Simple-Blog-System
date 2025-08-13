@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Edit Post</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label>Title</label>
+        <input type="text" name="title" class="form-control" value="{{ post.title }}" required>
+    </div>
+    <div class="mb-3">
+        <label>Content</label>
+        <textarea name="content" class="form-control" rows="4" required>{{ post.content }}</textarea>
+    </div>
+    <div class="mb-3">
+        <label>Author</label>
+        <input type="text" name="author" class="form-control" value="{{ post.author }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Post</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
